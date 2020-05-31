@@ -1,0 +1,31 @@
+<h2>Investors</h2>
+
+<div class="row">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th>Funds</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let investor of investors">
+                <td>
+                    {{investor.name}}
+                </td>
+                <td>
+                    <a [routerLink]="['/funds/search']" [queryParams]="{ investorId: investor.id, clientId: clientId }">
+                        {{investor.numOfFunds}}
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="row">
+    <div class="col-sm">
+        <a routerLink="/">Back to Clients</a>
+    </div>
+</div>

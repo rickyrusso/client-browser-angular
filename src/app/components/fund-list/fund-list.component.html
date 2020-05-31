@@ -1,0 +1,28 @@
+<h2>Funds</h2>
+
+<div class="row">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let fund of funds" >
+                <td> {{fund.name}} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <div class="col-sm">
+        <a routerLink="/investors/search"
+           [queryParams]="{ clientId: clientId }">
+            Back to Investors
+        </a>
+    </div>
+    <div class="col-sm">
+        <a routerLink="/">Back to Clients</a>
+    </div>
+</div>

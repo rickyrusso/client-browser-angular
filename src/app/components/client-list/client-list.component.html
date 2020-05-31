@@ -1,0 +1,22 @@
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Investors</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let client of clients" >
+
+            <td>{{client.name}}</td>
+            <td>{{client.description}}</td>
+            <td><a [routerLink]="['/investors/search']" [queryParams]="{ clientId: client.id }">{{client.numOfInvestments}}</a></td>
+            <td><a routerLink="/client-edit/{{client.id}}" [queryParams]="{Client:client | json}">Edit</a></td>
+
+        </tr>
+    </tbody>
+</table>
+
